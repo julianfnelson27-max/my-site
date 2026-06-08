@@ -1,63 +1,74 @@
 import './App.css'
+import figure1 from './assets/figure1.png'
+import figure2 from './assets/figure2.png'
+import figure3 from './assets/figure3.png'
 
 function App() {
-  const projects = [
-    {
-      title: 'Project One',
-      description: 'A placeholder for an upcoming quantitative data analysis or social science research project.',
-      href: '#',
-    },
-    {
-      title: 'Project Two',
-      description: 'A behavioral study or statistical model analyzing public policy trends.',
-      href: '#',
-    },
-    {
-      title: 'Project Three',
-      description: 'A data visualization application built to map social phenomena.',
-      href: '#',
-    },
-  ];
-
   return (
-    <div className="portfolio-container">
-      <main className="portfolio">
-        <header className="header">
-          <h1>Julian Nelson</h1>
-          <p className="tagline">Dartmouth College &rsquo;27 &middot; Quantitative Social Science</p>
-        </header>
+    <div className="paper-container">
+      <header className="paper-header">
+        <h1 className="paper-title">Julian Nelson</h1>
+        <p className="paper-author">Dartmouth College &rsquo;27 &middot; Quantitative Social Science</p>
+        <p className="paper-contact">
+          <a href="mailto:julian.nelson.27@dartmouth.edu">julian.nelson.27@dartmouth.edu</a>
+        </p>
+      </header>
 
-        <section className="bio">
-          <h2>About Me</h2>
+      <hr className="divider" />
+
+      <main className="paper-body">
+        <section className="paper-section">
+          <h2>Question</h2>
           <p>
-            Hi, I&rsquo;m Julian &mdash; a student at Dartmouth College studying Quantitative Social
-            Science. I&rsquo;m interested in leveraging data to understand complex social phenomena, 
-            from public policy and economics to political behavior. Outside of class, I enjoy 
-            hiking the White Mountains and playing chess.
+            Taxes on labor income constitute the largest pillar of federal revenue. This project examines the vulnerability of that fiscal foundation if artificial intelligence automates wages faster than corporate tax gains replace the loss.
           </p>
         </section>
 
-        <section className="projects">
-          <h2>Projects</h2>
-          <ul className="project-list">
-            {projects.map((p, index) => (
-              <li key={index} className="project-card">
-                <a href={p.href}>
-                  <h3>{p.title}</h3>
-                  <p>{p.description}</p>
-                </a>
-              </li>
-            ))}
-          </ul>
+        <section className="paper-section">
+          <h2>Data</h2>
+          <p>
+            The analysis links industry exposure projections from the March 2026 Digital Planet dataset to administrative corporate financials from the Tax Year 2022 IRS Statistics of Income. The combined dataset tracks financial scales and automation risks across 19 major NAICS sectors.
+          </p>
         </section>
 
-        <footer className="footer">
-          <h2>Connect</h2>
-          <p>Let's collaborate or discuss research opportunities.</p>
-          <a href="mailto:julian.nelson.27@dartmouth.edu" className="email-link">
-            julian.f.nelson.27@dartmouth.edu
-          </a>
-        </footer>
+        <section className="paper-section">
+          <h2>Method</h2>
+          <p>
+            The model derives an operational cost scale proxy for the labor base using corporate receipts and net income. A 100,000-draw Monte Carlo simulation propagates exposure uncertainty across Slow, Median, and Fast adoption timelines. The simulation incorporates standard statutory individual, payroll, and corporate tax rates alongside a fixed 3 percent corporate profit growth offset.
+          </p>
+        </section>
+
+        <section className="paper-section">
+          <h2>Result</h2>
+          
+          <div className="figure-box">
+            <img src={figure1} alt="Monte Carlo Simulation: Projected Federal Revenue Shortfall Under AI Displacement" />
+            <p className="caption">
+              <strong>Figure 1 Caption:</strong> The simulation projects a median annual federal revenue shortfall of $0.32 trillion under the Slow timeline, $1.12 trillion under the Median timeline, and $2.31 trillion under the Fast timeline. These shortfalls represent 2.0 percent, 7.0 percent, and 14.3 percent of baseline federal revenue. Whiskers mark the 5th and 95th percentiles of the simulated distribution.
+            </p>
+          </div>
+
+          <div className="figure-box">
+            <img src={figure2} alt="Industry-Level Projected Federal Revenue Shortfall - Fast AI Adoption Timeline" />
+            <p className="caption">
+              <strong>Figure 2 Caption:</strong> Under the Fast timeline, 17 of 19 major economic sectors cross a structural deficit trap threshold where net revenue losses exceed 5 percent of sector baseline revenue. Finance and Insurance, Wholesale Trade, and Manufacturing experience the largest absolute shortfalls.
+            </p>
+          </div>
+
+          <div className="figure-box">
+            <img src={figure3} alt="Monte Carlo Simulation: Distribution of Federal Revenue Shortfall by AI Adoption Timeline" />
+            <p className="caption">
+              <strong>Figure 3 Caption:</strong> Kernel density estimates across all 100,000 iterations map the continuous risk profile for each timeline. The entire probability mass for the Median and Fast timelines sits to the right of the dashed break-even line, establishing a near certainty of net fiscal deficit pressure.
+            </p>
+          </div>
+        </section>
+
+        <section className="paper-section">
+          <h2>Takeaway</h2>
+          <p>
+            Rapid AI adoption creates severe, systemic fiscal exposure. The current labor-centric tax framework faces a structural deficit trap because realistic corporate growth gains lack the scale required to replace automated payroll revenue.
+          </p>
+        </section>
       </main>
     </div>
   )
